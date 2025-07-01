@@ -20,7 +20,7 @@
   #   ├── ui.py
   #   ├── main.py
   #   └── ...
-  ```
+
  ## 2. Frequent Maintenance Requirements
 When:
 Business logic changes regularly
