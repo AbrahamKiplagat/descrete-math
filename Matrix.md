@@ -7,7 +7,7 @@ Great! Let's go step-by-step through everything you need to know about **matrice
 A **matrix** is a **2D array of numbers** arranged in rows and columns.
 
 Example:
-
+```text
 $$
 A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}
 $$
@@ -46,7 +46,7 @@ $$
 ## 🔹 Matrix Operations
 
 Let:
-
+```text
 $$
 A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, \quad
 B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}
@@ -161,7 +161,7 @@ inv = np.linalg.inv(A)
 ## ✅ Practice Problems (With Answers Upon Request)
 
 1. Multiply the matrices:
-
+```text
    $$
    A = \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix}, 
    B = \begin{bmatrix} 3 & 4 \\ 1 & 2 \end{bmatrix}
