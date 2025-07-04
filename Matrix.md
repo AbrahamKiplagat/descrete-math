@@ -1133,3 +1133,568 @@ In mathematics and computer science, **matrices** come in various types, each wi
 ---
 
 Would you like to go deeper into how these are used in computer science (e.g. in games, AI, graphics, etc.) or see examples/calculations for each?
+### **Step-by-Step Solutions to All Matrix Exercises**
+
+---
+
+#### **Exercise 1: Matrix Addition & Scalar Multiplication**
+**Given**:
+\[
+A = \begin{pmatrix} 1 & 3 \\ -2 & 0 \end{pmatrix}, \quad B = \begin{pmatrix} 4 & -1 \\ 2 & 5 \end{pmatrix}
+\]
+
+**1. Compute \( A + B \):**
+\[
+A + B = \begin{pmatrix} 
+1+4 & 3+(-1) \\ 
+-2+2 & 0+5 
+\end{pmatrix} = \boxed{\begin{pmatrix} 5 & 2 \\ 0 & 5 \end{pmatrix}}
+\]
+
+**2. Compute \( 3A - 2B \):**
+- **Step 1**: Multiply matrices by scalars.
+  \[
+  3A = 3 \begin{pmatrix} 1 & 3 \\ -2 & 0 \end{pmatrix} = \begin{pmatrix} 3 & 9 \\ -6 & 0 \end{pmatrix}
+  \]
+  \[
+  2B = 2 \begin{pmatrix} 4 & -1 \\ 2 & 5 \end{pmatrix} = \begin{pmatrix} 8 & -2 \\ 4 & 10 \end{pmatrix}
+  \]
+- **Step 2**: Subtract the matrices.
+  \[
+  3A - 2B = \begin{pmatrix} 3-8 & 9-(-2) \\ -6-4 & 0-10 \end{pmatrix} = \boxed{\begin{pmatrix} -5 & 11 \\ -10 & -10 \end{pmatrix}}
+  \]
+
+---
+
+#### **Exercise 2: Matrix Multiplication**
+**Given**:
+\[
+C = \begin{pmatrix} 2 & 1 \\ 0 & 3 \end{pmatrix}, \quad D = \begin{pmatrix} -1 & 4 \\ 2 & 0 \end{pmatrix}
+\]
+
+**1. Compute \( CD \):**
+\[
+CD = \begin{pmatrix} 
+(2)(-1)+(1)(2) & (2)(4)+(1)(0) \\ 
+(0)(-1)+(3)(2) & (0)(4)+(3)(0) 
+\end{pmatrix} = \boxed{\begin{pmatrix} 0 & 8 \\ 6 & 0 \end{pmatrix}}
+\]
+
+**2. Compute \( DC \):**
+\[
+DC = \begin{pmatrix} 
+(-1)(2)+(4)(0) & (-1)(1)+(4)(3) \\ 
+(2)(2)+(0)(0) & (2)(1)+(0)(3) 
+\end{pmatrix} = \boxed{\begin{pmatrix} -2 & 11 \\ 4 & 2 \end{pmatrix}}
+\]
+
+**Conclusion**: \( CD \neq DC \). Matrix multiplication is **not commutative**.
+
+---
+
+#### **Exercise 3: Determinant & Inverse**
+**Given**:
+\[
+E = \begin{pmatrix} 3 & 1 \\ 2 & 4 \end{pmatrix}
+\]
+
+**1. Find \( \det(E) \):**
+\[
+\det(E) = (3)(4) - (1)(2) = 12 - 2 = \boxed{10}
+\]
+
+**2. Find \( E^{-1} \) (if exists):**
+\[
+E^{-1} = \frac{1}{\det(E)} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} = \frac{1}{10} \begin{pmatrix} 4 & -1 \\ -2 & 3 \end{pmatrix} = \boxed{\begin{pmatrix} 0.4 & -0.1 \\ -0.2 & 0.3 \end{pmatrix}}
+\]
+
+---
+
+#### **Exercise 4: System of Equations via Matrices**
+**Given**:
+\[
+\begin{cases}
+2x + 3y = 5 \\
+x - y = 1
+\end{cases}
+\]
+
+**1. Write in matrix form \( AX = B \):**
+\[
+\begin{pmatrix} 2 & 3 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 5 \\ 1 \end{pmatrix}
+\]
+
+**2. Find \( A^{-1} \):**
+\[
+\det(A) = (2)(-1) - (3)(1) = -5
+\]
+\[
+A^{-1} = \frac{1}{-5} \begin{pmatrix} -1 & -3 \\ -1 & 2 \end{pmatrix} = \begin{pmatrix} 0.2 & 0.6 \\ 0.2 & -0.4 \end{pmatrix}
+\]
+
+**3. Solve \( X = A^{-1}B \):**
+\[
+\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 0.2 & 0.6 \\ 0.2 & -0.4 \end{pmatrix} \begin{pmatrix} 5 \\ 1 \end{pmatrix} = \begin{pmatrix} (0.2)(5)+(0.6)(1) \\ (0.2)(5)+(-0.4)(1) \end{pmatrix} = \boxed{\begin{pmatrix} 1.6 \\ 0.6 \end{pmatrix}}
+\]
+
+**Solution**: \( x = 1.6 \), \( y = 0.6 \).
+
+---
+
+#### **Exercise 5: Transpose & Symmetry**
+**Given**:
+\[
+F = \begin{pmatrix} 1 & -2 & 3 \\ 0 & 4 & 5 \end{pmatrix}
+\]
+
+**1. Find \( F^T \):**
+\[
+F^T = \boxed{\begin{pmatrix} 1 & 0 \\ -2 & 4 \\ 3 & 5 \end{pmatrix}}
+\]
+
+**2. Symmetry Check**:  
+\( F \) is **not symmetric** because \( F \neq F^T \) (different dimensions).
+
+---
+
+#### **Exercise 6: Eigenvalues & Eigenvectors**
+**Given**:
+\[
+G = \begin{pmatrix} 4 & 1 \\ 2 & 3 \end{pmatrix}
+\]
+
+**1. Find eigenvalues (\( \lambda \)):**
+\[
+\det(G - \lambda I) = \begin{vmatrix} 4-\lambda & 1 \\ 2 & 3-\lambda \end{vmatrix} = (4-\lambda)(3-\lambda) - 2 = \lambda^2 - 7\lambda + 10 = 0
+\]
+\[
+\lambda = \boxed{2} \quad \text{and} \quad \boxed{5}
+\]
+
+**2. Find eigenvectors for each \( \lambda \):**
+- **For \( \lambda = 2 \)**:
+  \[
+  (G - 2I)\mathbf{v} = \begin{pmatrix} 2 & 1 \\ 2 & 1 \end{pmatrix} \begin{pmatrix} v_1 \\ v_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \implies \mathbf{v} = \boxed{\begin{pmatrix} 1 \\ -2 \end{pmatrix}}
+  \]
+- **For \( \lambda = 5 \)**:
+  \[
+  (G - 5I)\mathbf{v} = \begin{pmatrix} -1 & 1 \\ 2 & -2 \end{pmatrix} \begin{pmatrix} v_1 \\ v_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \implies \mathbf{v} = \boxed{\begin{pmatrix} 1 \\ 1 \end{pmatrix}}
+  \]
+
+---
+
+#### **Exercise 7: Rank of a Matrix**
+**Given**:
+\[
+H = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \\ 0 & 1 & 0 \end{pmatrix}
+\]
+
+**1. Perform row operations**:
+- Subtract 2 × Row 1 from Row 2:
+  \[
+  \begin{pmatrix} 1 & 2 & 3 \\ 0 & 0 & 0 \\ 0 & 1 & 0 \end{pmatrix}
+  \]
+- Swap Row 2 and Row 3:
+  \[
+  \begin{pmatrix} 1 & 2 & 3 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{pmatrix}
+  \]
+
+**2. Rank**: Number of non-zero rows = \boxed{2}.
+
+---
+
+### **Final Notes**
+- **Determinant**: If \( \det = 0 \), the matrix is singular (no inverse).
+- **Inverse**: Only exists for square matrices with \( \det \neq 0 \).
+- **Eigenvectors**: Scale infinitely; only direction matters.
+
+Need further clarification? Ask away! 😊
+### **Matrix Algebra: Step-by-Step Guide with Examples**
+
+Matrix algebra is a fundamental tool in mathematics, physics, computer science, and engineering. Below is a structured breakdown of key operations with clear examples.
+
+---
+
+### **1. Matrix Basics**
+A matrix is a rectangular array of numbers arranged in rows and columns.
+
+**Example:**
+\[
+A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}
+\]
+- **Dimensions**: \( 2 \times 2 \) (rows × columns).
+
+---
+
+### **2. Matrix Addition & Subtraction**
+**Rule**: Matrices must have the same dimensions. Add/subtract corresponding elements.
+
+**Example**:
+\[
+A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}, \quad B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}
+\]
+\[
+A + B = \begin{pmatrix} 1+5 & 2+6 \\ 3+7 & 4+8 \end{pmatrix} = \boxed{\begin{pmatrix} 6 & 8 \\ 10 & 12 \end{pmatrix}}
+\]
+
+---
+
+### **3. Scalar Multiplication**
+Multiply every element by a scalar (constant).
+
+**Example**:
+\[
+3A = 3 \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} = \boxed{\begin{pmatrix} 3 & 6 \\ 9 & 12 \end{pmatrix}}
+\]
+
+---
+
+### **4. Matrix Multiplication**
+**Rule**: Number of columns in the first matrix must equal rows in the second.  
+The product \( C = AB \) has elements:
+\[
+c_{ij} = \sum_{k=1}^n a_{ik}b_{kj}
+\]
+
+**Example**:
+\[
+A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}, \quad B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}
+\]
+\[
+AB = \begin{pmatrix} 
+(1)(5)+(2)(7) & (1)(6)+(2)(8) \\ 
+(3)(5)+(4)(7) & (3)(6)+(4)(8) 
+\end{pmatrix} = \boxed{\begin{pmatrix} 19 & 22 \\ 43 & 50 \end{pmatrix}}
+\]
+
+**Key Point**: \( AB \neq BA \) in general.
+
+---
+
+### **5. Transpose of a Matrix (\( A^T \))**
+Swap rows and columns.
+
+**Example**:
+\[
+A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}, \quad A^T = \boxed{\begin{pmatrix} 1 & 3 \\ 2 & 4 \end{pmatrix}}
+\]
+
+---
+
+### **6. Determinant of a Square Matrix**
+For \( 2 \times 2 \):
+\[
+\det(A) = \begin{vmatrix} a & b \\ c & d \end{vmatrix} = ad - bc
+\]
+
+**Example**:
+\[
+\det \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} = (1)(4) - (2)(3) = \boxed{-2}
+\]
+
+**Significance**: If \( \det(A) = 0 \), the matrix is **singular** (no inverse).
+
+---
+
+### **7. Inverse of a Matrix (\( A^{-1} \))**
+For \( 2 \times 2 \):
+\[
+A^{-1} = \frac{1}{\det(A)} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}
+\]
+
+**Example**:
+\[
+A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}, \quad \det(A) = -2
+\]
+\[
+A^{-1} = \frac{1}{-2} \begin{pmatrix} 4 & -2 \\ -3 & 1 \end{pmatrix} = \boxed{\begin{pmatrix} -2 & 1 \\ 1.5 & -0.5 \end{pmatrix}}
+\]
+
+**Verification**: Check \( AA^{-1} = I \) (identity matrix).
+
+---
+
+### **8. Solving Linear Systems**
+Convert \( AX = B \) to \( X = A^{-1}B \).
+
+**Example**:
+\[
+\begin{cases}
+x + 2y = 5 \\
+3x + 4y = 6
+\end{cases}
+\]
+\[
+A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}, \quad B = \begin{pmatrix} 5 \\ 6 \end{pmatrix}
+\]
+\[
+X = A^{-1}B = \begin{pmatrix} -2 & 1 \\ 1.5 & -0.5 \end{pmatrix} \begin{pmatrix} 5 \\ 6 \end{pmatrix} = \boxed{\begin{pmatrix} -4 \\ 4.5 \end{pmatrix}}
+\]
+**Solution**: \( x = -4 \), \( y = 4.5 \).
+
+---
+
+### **9. Eigenvalues & Eigenvectors**
+Solve \( \det(A - \lambda I) = 0 \) for eigenvalues (\( \lambda \)), then find eigenvectors.
+
+**Example**:
+\[
+A = \begin{pmatrix} 4 & 1 \\ 2 & 3 \end{pmatrix}
+\]
+\[
+\det \begin{pmatrix} 4-\lambda & 1 \\ 2 & 3-\lambda \end{pmatrix} = \lambda^2 - 7\lambda + 10 = 0 \implies \lambda = \boxed{2, 5}
+\]
+- **Eigenvector for \( \lambda = 2 \)**:
+  \[
+  (A - 2I)\mathbf{v} = \begin{pmatrix} 2 & 1 \\ 2 & 1 \end{pmatrix} \begin{pmatrix} v_1 \\ v_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \implies \mathbf{v} = \boxed{\begin{pmatrix} 1 \\ -2 \end{pmatrix}}
+  \]
+
+---
+
+### **10. Rank of a Matrix**
+Number of linearly independent rows/columns.
+
+**Example**:
+\[
+\begin{pmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \\ 0 & 1 & 0 \end{pmatrix} \xrightarrow{\text{Row ops}} \begin{pmatrix} 1 & 2 & 3 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{pmatrix} \implies \text{Rank} = \boxed{2}
+\]
+
+---
+
+### **Summary Table**
+| Operation          | Formula/Example                          | Key Rule                          |
+|--------------------|-----------------------------------------|-----------------------------------|
+| **Addition**       | \( A + B \) (element-wise)              | Same dimensions                  |
+| **Multiplication** | \( AB \) (dot product of rows/columns) | cols(A) = rows(B)                |
+| **Determinant**    | \( ad - bc \) (\( 2 \times 2 \))        | \( \det = 0 \implies \) singular |
+| **Inverse**        | \( A^{-1} = \frac{1}{\det(A)} \text{adj}(A) \) | Only for \( \det \neq 0 \) |
+| **Eigenvalues**    | \( \det(A - \lambda I) = 0 \)           | Find roots of characteristic poly. |
+
+---
+
+### **Practice Problems**
+1. Compute \( AB \) for:
+   \[
+   A = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}, \quad B = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}
+   \]
+2. Find the inverse of:
+   \[
+   C = \begin{pmatrix} 2 & 0 \\ 0 & 3 \end{pmatrix}
+   \]
+3. Solve using matrices:
+   \[
+   \begin{cases} 2x - y = 3 \\ x + y = 0 \end{cases}
+   \]
+
+**Answers**:
+1. \( AB = \begin{pmatrix} 0 & -1 \\ -1 & 0 \end{pmatrix} \)
+2. \( C^{-1} = \begin{pmatrix} 0.5 & 0 \\ 0 & \frac{1}{3} \end{pmatrix} \)
+3. \( x = 1 \), \( y = -1 \)
+
+---
+
+This guide covers core matrix operations with practical examples. For deeper dives (e.g., LU decomposition, diagonalization), let me know!
+### **Inverse of a Matrix: Step-by-Step Guide**
+
+The **inverse of a matrix** \( A \), denoted \( A^{-1} \), is a matrix that, when multiplied by \( A \), yields the **identity matrix** \( I \). Not all matrices have inverses—only **square matrices** (same number of rows and columns) with a **non-zero determinant** are invertible.
+
+---
+
+## **1. Conditions for an Inverse**
+A matrix \( A \) has an inverse **if and only if**:
+- It is **square** (\( n \times n \)).
+- Its **determinant is non-zero** (\( \det(A) \neq 0 \)).
+
+If \( \det(A) = 0 \), the matrix is **singular** (no inverse exists).
+
+---
+
+## **2. Inverse of a \( 2 \times 2 \) Matrix**
+For a general \( 2 \times 2 \) matrix:
+\[
+A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}
+\]
+The inverse is:
+\[
+A^{-1} = \frac{1}{\det(A)} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}
+\]
+where \( \det(A) = ad - bc \).
+
+### **Example**
+Find the inverse of:
+\[
+A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}
+\]
+
+**Step 1**: Compute the determinant.
+\[
+\det(A) = (1)(4) - (2)(3) = 4 - 6 = -2 \quad (\text{Non-zero, so inverse exists})
+\]
+
+**Step 2**: Apply the inverse formula.
+\[
+A^{-1} = \frac{1}{-2} \begin{pmatrix} 4 & -2 \\ -3 & 1 \end{pmatrix} = \begin{pmatrix} -2 & 1 \\ 1.5 & -0.5 \end{pmatrix}
+\]
+
+**Verification**:
+\[
+AA^{-1} = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \begin{pmatrix} -2 & 1 \\ 1.5 & -0.5 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = I \quad \text{(Identity matrix)}
+\]
+
+---
+
+## **3. Inverse of a \( 3 \times 3 \) Matrix (Using Adjugate Method)**
+For a \( 3 \times 3 \) matrix \( A \), the inverse is:
+\[
+A^{-1} = \frac{1}{\det(A)} \text{adj}(A)
+\]
+where:
+- \( \text{adj}(A) \) = Adjugate (transpose of the cofactor matrix).
+- \( \det(A) \) = Determinant of \( A \).
+
+### **Example**
+Find the inverse of:
+\[
+A = \begin{pmatrix} 1 & 0 & 2 \\ 2 & 1 & 0 \\ 0 & 1 & 1 \end{pmatrix}
+\]
+
+**Step 1**: Compute the determinant.
+\[
+\det(A) = 1 \cdot \begin{vmatrix} 1 & 0 \\ 1 & 1 \end{vmatrix} - 0 \cdot \begin{vmatrix} 2 & 0 \\ 0 & 1 \end{vmatrix} + 2 \cdot \begin{vmatrix} 2 & 1 \\ 0 & 1 \end{vmatrix}
+\]
+\[
+= 1(1 \cdot 1 - 0 \cdot 1) + 2(2 \cdot 1 - 1 \cdot 0) = 1 + 4 = 5 \quad (\text{Inverse exists})
+\]
+
+**Step 2**: Find the **cofactor matrix**.
+\[
+C = \begin{pmatrix}
++\begin{vmatrix} 1 & 0 \\ 1 & 1 \end{vmatrix} & -\begin{vmatrix} 2 & 0 \\ 0 & 1 \end{vmatrix} & +\begin{vmatrix} 2 & 1 \\ 0 & 1 \end{vmatrix} \\
+-\begin{vmatrix} 0 & 2 \\ 1 & 1 \end{vmatrix} & +\begin{vmatrix} 1 & 2 \\ 0 & 1 \end{vmatrix} & -\begin{vmatrix} 1 & 0 \\ 0 & 1 \end{vmatrix} \\
++\begin{vmatrix} 0 & 2 \\ 1 & 0 \end{vmatrix} & -\begin{vmatrix} 1 & 2 \\ 2 & 0 \end{vmatrix} & +\begin{vmatrix} 1 & 0 \\ 2 & 1 \end{vmatrix}
+\end{pmatrix}
+\]
+\[
+= \begin{pmatrix} 1 & -2 & 2 \\ 2 & 1 & -1 \\ -2 & 4 & 1 \end{pmatrix}
+\]
+
+**Step 3**: Take the **transpose** of the cofactor matrix to get the adjugate.
+\[
+\text{adj}(A) = C^T = \begin{pmatrix} 1 & 2 & -2 \\ -2 & 1 & 4 \\ 2 & -1 & 1 \end{pmatrix}
+\]
+
+**Step 4**: Compute the inverse.
+\[
+A^{-1} = \frac{1}{5} \begin{pmatrix} 1 & 2 & -2 \\ -2 & 1 & 4 \\ 2 & -1 & 1 \end{pmatrix}
+\]
+
+**Verification**:
+\[
+AA^{-1} = I \quad \text{(You can multiply to check)}
+\]
+
+---
+
+## **4. Inverse Using Row Operations (Gauss-Jordan Method)**
+An alternative method for larger matrices.
+
+### **Steps**:
+1. Augment \( A \) with the identity matrix: \( [A \mid I] \).
+2. Perform row operations to transform \( A \) into \( I \).
+3. The right side becomes \( A^{-1} \).
+
+### **Example**
+Find \( A^{-1} \) for:
+\[
+A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}
+\]
+
+**Step 1**: Augment \( A \) with \( I \):
+\[
+\begin{pmatrix} 1 & 2 & | & 1 & 0 \\ 3 & 4 & | & 0 & 1 \end{pmatrix}
+\]
+
+**Step 2**: Apply row operations:
+- \( R_2 \rightarrow R_2 - 3R_1 \):
+  \[
+  \begin{pmatrix} 1 & 2 & | & 1 & 0 \\ 0 & -2 & | & -3 & 1 \end{pmatrix}
+  \]
+- \( R_2 \rightarrow -\frac{1}{2}R_2 \):
+  \[
+  \begin{pmatrix} 1 & 2 & | & 1 & 0 \\ 0 & 1 & | & 1.5 & -0.5 \end{pmatrix}
+  \]
+- \( R_1 \rightarrow R_1 - 2R_2 \):
+  \[
+  \begin{pmatrix} 1 & 0 & | & -2 & 1 \\ 0 & 1 & | & 1.5 & -0.5 \end{pmatrix}
+  \]
+
+**Step 3**: The right side is \( A^{-1} \):
+\[
+A^{-1} = \begin{pmatrix} -2 & 1 \\ 1.5 & -0.5 \end{pmatrix}
+\]
+
+---
+
+## **5. Properties of Matrix Inverses**
+1. **Uniqueness**: If \( A^{-1} \) exists, it is unique.
+2. **Inverse of a Product**: \( (AB)^{-1} = B^{-1}A^{-1} \).
+3. **Inverse of Inverse**: \( (A^{-1})^{-1} = A \).
+4. **Transpose of Inverse**: \( (A^T)^{-1} = (A^{-1})^T \).
+
+---
+
+## **6. When Does a Matrix **Not** Have an Inverse?**
+A matrix is **singular** (no inverse) if:
+- It is **not square**.
+- Its **determinant is zero** (\( \det(A) = 0 \)).
+- It has **linearly dependent rows/columns**.
+
+### **Example**
+\[
+B = \begin{pmatrix} 1 & 2 \\ 2 & 4 \end{pmatrix}
+\]
+\[
+\det(B) = (1)(4) - (2)(2) = 0 \quad \text{(No inverse exists)}
+\]
+
+---
+
+## **7. Applications of Matrix Inverses**
+- Solving linear systems \( AX = B \) → \( X = A^{-1}B \).
+- Computer graphics (transformations).
+- Cryptography (encoding/decoding).
+
+---
+
+## **Summary**
+| Key Concept                     | Formula/Method                          |
+|---------------------------------|----------------------------------------|
+| **Inverse of \( 2 \times 2 \)** | \( A^{-1} = \frac{1}{\det(A)} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \) |
+| **Inverse of \( 3 \times 3 \)** | \( A^{-1} = \frac{1}{\det(A)} \text{adj}(A) \) |
+| **Gauss-Jordan Method**         | Row reduce \( [A \mid I] \) to \( [I \mid A^{-1}] \) |
+| **Singular Matrix**             | \( \det(A) = 0 \) → No inverse         |
+
+---
+
+### **Practice Problems**
+1. Find the inverse of:
+   \[
+   C = \begin{pmatrix} 2 & 0 \\ 0 & 3 \end{pmatrix}
+   \]
+   **Answer**: \( C^{-1} = \begin{pmatrix} 0.5 & 0 \\ 0 & \frac{1}{3} \end{pmatrix} \)
+
+2. Does the following matrix have an inverse?
+   \[
+   D = \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}
+   \]
+   **Answer**: No (\( \det(D) = 0 \)).
+
+3. Solve using \( A^{-1} \):
+   \[
+   \begin{cases} 2x + y = 5 \\ x - y = 1 \end{cases}
+   \]
+   **Answer**: \( x = 2 \), \( y = 1 \).
+
+---
+
+This guide covers all key aspects of matrix inverses. Let me know if you'd like further clarification or advanced methods!
